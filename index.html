@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ده أهم سطر للموبايل -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>إذاعة القرآن الكريم – القاهرة</title>
@@ -33,9 +32,10 @@ h1{
 p{
   font-size:4vw;
   color:#666;
-  margin-bottom:6vh;
+  margin-bottom:5vh;
 }
 
+/* زر التشغيل */
 button{
   width:40vw;
   height:40vw;
@@ -53,6 +53,32 @@ button:active{
   background:#166a56;
 }
 
+/* شريط الصوت */
+.equalizer{
+  display:flex;
+  gap:6px;
+  margin-top:30px;
+  height:30px;
+}
+
+.bar{
+  width:6px;
+  height:100%;
+  background:#1f8a70;
+  animation: bounce 1s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.bar:nth-child(2){ animation-delay: .1s; }
+.bar:nth-child(3){ animation-delay: .2s; }
+.bar:nth-child(4){ animation-delay: .3s; }
+.bar:nth-child(5){ animation-delay: .4s; }
+
+@keyframes bounce{
+  0%,100%{ height:20%; }
+  50%{ height:100%; }
+}
+
 audio{
   display:none;
 }
@@ -67,6 +93,15 @@ audio{
 
   <button id="btn" onclick="playPause()">▶</button>
 
+  <!-- شريط التفاعل -->
+  <div class="equalizer" id="eq">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
   <audio id="radio">
     <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
   </audio>
@@ -75,14 +110,17 @@ audio{
 <script>
 const radio = document.getElementById("radio");
 const btn = document.getElementById("btn");
+const bars = document.querySelectorAll(".bar");
 
 function playPause(){
   if(radio.paused){
     radio.play();
     btn.innerHTML = "❚❚";
+    bars.forEach(bar => bar.style.animationPlayState = "running");
   }else{
     radio.pause();
     btn.innerHTML = "▶";
+    bars.forEach(bar => bar.style.animationPlayState = "paused");
   }
 }
 </script>
