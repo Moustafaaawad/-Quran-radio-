@@ -26,8 +26,8 @@ body{
 
 /* العنوان */
 h1{
-  font-size:7vw;
-  max-font-size:28px;
+  font-size:6.5vw;
+  max-font-size:30px;
   margin:0;
 }
 
@@ -35,18 +35,18 @@ h1{
   font-size:4vw;
   max-font-size:16px;
   color:#666;
-  margin:10px 0 30px;
+  margin:10px 0 35px;
 }
 
 /* زر التشغيل */
 .play-btn{
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   border-radius:50%;
   border:none;
   background:#1f8a70;
   color:#fff;
-  font-size:50px;
+  font-size:55px;
   cursor:pointer;
 }
 
@@ -56,19 +56,19 @@ h1{
 
 /* شريط التفاعل */
 .equalizer{
-  display:flex;
+  display:none;           /* مخفي افتراضيًا */
   justify-content:center;
-  gap:8px;
-  margin-top:25px;
-  height:40px;
+  gap:10px;
+  margin-top:30px;
+  height:55px;
 }
 
 .bar{
-  width:8px;
-  height:10px;
+  width:10px;
+  height:15px;
   background:#1f8a70;
+  border-radius:4px;
   animation: wave 1s infinite ease-in-out;
-  animation-play-state: paused;
 }
 
 .bar:nth-child(1){animation-delay:0s;}
@@ -78,8 +78,8 @@ h1{
 .bar:nth-child(5){animation-delay:.4s;}
 
 @keyframes wave{
-  0%,100%{ height:10px; }
-  50%{ height:40px; }
+  0%,100%{ height:15px; }
+  50%{ height:55px; }
 }
 
 audio{
@@ -96,6 +96,42 @@ audio{
 
   <button class="play-btn" id="btn" onclick="togglePlay()">▶</button>
 
-  <div class="equalizer">
+  <div class="equalizer" id="eq">
     <div class="bar"></div>
-    <div cl
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <audio id="radio">
+    <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+const radio = document.getElementById("radio");
+const btn = document.getElementById("btn");
+const eq = document.getElementById("eq");
+
+function togglePlay(){
+  if(radio.paused){
+    radio.play();
+    btn.innerHTML = "❚❚";
+    eq.style.display = "flex";   // يظهر ويشتغل
+  }else{
+    radio.pause();
+    btn.innerHTML = "▶";
+    eq.style.display = "none";   // يختفي
+  }
+}
+
+/* لو الصوت وقف لأي سبب */
+radio.addEventListener("ended", () => {
+  btn.innerHTML = "▶";
+  eq.style.display = "none";
+});
+</script>
+
+</body>
+</html>
