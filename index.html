@@ -2,51 +2,55 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
+
+<!-- ده أهم سطر للموبايل -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>إذاعة القرآن الكريم – القاهرة</title>
 
 <style>
 body{
   margin:0;
   font-family: Arial, sans-serif;
-  background:#f2f2f2;
+  background:#ffffff;
   text-align:center;
   direction: rtl;
 }
 
-.container{
-  padding:60px 15px;
+.wrapper{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 
 h1{
-  font-size:26px;
-  margin-bottom:5px;
+  font-size:6vw;
+  margin-bottom:1vh;
 }
 
-.subtitle{
-  font-size:16px;
-  color:#555;
-  margin-bottom:40px;
+p{
+  font-size:4vw;
+  color:#666;
+  margin-bottom:6vh;
 }
 
-.play-btn{
-  width:140px;
-  height:140px;
+button{
+  width:40vw;
+  height:40vw;
+  max-width:200px;
+  max-height:200px;
   border-radius:50%;
-  background:#2c7a7b;
-  color:#fff;
-  font-size:60px;
   border:none;
+  background:#1f8a70;
+  color:#fff;
+  font-size:15vw;
   cursor:pointer;
 }
 
-.play-btn:active{
-  background:#225e5f;
-}
-
-.status{
-  margin-top:20px;
-  font-size:16px;
-  color:#333;
+button:active{
+  background:#166a56;
 }
 
 audio{
@@ -57,13 +61,11 @@ audio{
 
 <body>
 
-<div class="container">
+<div class="wrapper">
   <h1>📻 إذاعة القرآن الكريم</h1>
-  <div class="subtitle">بث مباشر من القاهرة</div>
+  <p>بث مباشر من القاهرة</p>
 
-  <button class="play-btn" onclick="togglePlay()">▶</button>
-
-  <div class="status" id="status">اضغط للتشغيل</div>
+  <button id="btn" onclick="playPause()">▶</button>
 
   <audio id="radio">
     <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
@@ -72,18 +74,15 @@ audio{
 
 <script>
 const radio = document.getElementById("radio");
-const statusText = document.getElementById("status");
-const btn = document.querySelector(".play-btn");
+const btn = document.getElementById("btn");
 
-function togglePlay(){
+function playPause(){
   if(radio.paused){
     radio.play();
     btn.innerHTML = "❚❚";
-    statusText.innerHTML = "الإذاعة تعمل الآن";
   }else{
     radio.pause();
     btn.innerHTML = "▶";
-    statusText.innerHTML = "تم الإيقاف";
   }
 }
 </script>
