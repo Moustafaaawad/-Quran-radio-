@@ -1,141 +1,164 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>إذاعة القرآن الكريم – القاهرة</title>
+  <title>إذاعة القرآن الكريم من القاهرة</title>
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#ffffff;
-  text-align:center;
-  direction: rtl;
-}
+  <meta name="description" content="إذاعة القرآن الكريم من القاهرة بث مباشر على مدار الساعة">
+  <meta name="theme-color" content="#1e7f66">
 
-.wrapper{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: "Tahoma", Arial;
+      background: linear-gradient(180deg, #3a2a1a, #1b1b1b);
+      color: #fff;
+      text-align: center;
+    }
 
-/* العنوان */
-h1{
-  font-size:6vw;
-  margin:0;
-}
+    .container {
+      max-width: 420px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.subtitle{
-  font-size:4vw;
-  color:#666;
-  margin:10px 0 30px;
-}
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-/* زر التشغيل */
-.play-btn{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  border:none;
-  background:#1f8a70;
-  color:#fff;
-  font-size:60px;
-  cursor:pointer;
-}
+    .subtitle {
+      background: #f5e6c8;
+      color: #000;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-.play-btn:active{
-  background:#166a56;
-}
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 15px;
+      margin-bottom: 20px;
+      color: #000;
+    }
 
-/* شريط التفاعل */
-.equalizer{
-  display:none;
-  justify-content:center;
-  gap:10px;
-  margin-top:30px;
-  height:50px;
-}
+    audio {
+      width: 100%;
+      height: 50px;
+    }
 
-.bar{
-  width:10px;
-  height:15px;
-  background:#1f8a70;
-  border-radius:4px;
-  animation: wave 1s infinite ease-in-out;
-}
+    canvas {
+      width: 100%;
+      height: 120px;
+    }
 
-.bar:nth-child(1){animation-delay:0s;}
-.bar:nth-child(2){animation-delay:.1s;}
-.bar:nth-child(3){animation-delay:.2s;}
-.bar:nth-child(4){animation-delay:.3s;}
-.bar:nth-child(5){animation-delay:.4s;}
+    .share-text {
+      color: #00ff99;
+      font-weight: bold;
+      margin: 15px 0;
+    }
 
-@keyframes wave{
-  0%,100%{ height:15px; }
-  50%{ height:50px; }
-}
-</style>
+    .share-btn {
+      background: #25d366;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .share-btn:active {
+      transform: scale(0.97);
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="wrapper">
+<div class="container">
+
   <h1>📻 إذاعة القرآن الكريم</h1>
-  <div class="subtitle">بث مباشر من القاهرة</div>
 
-  <button class="play-btn" id="btn">▶</button>
-
-  <div class="equalizer" id="eq">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+  <div class="subtitle">
+    إذاعة القرآن الكريم من القاهرة بث مباشر
   </div>
 
-  <!-- الصوت -->
-  <audio id="radio" preload="none"></audio>
+  <!-- Audio Player -->
+  <div class="card">
+    <audio id="audio" controls>
+      <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
+      المتصفح لا يدعم تشغيل الصوت
+    </audio>
+  </div>
+
+  <!-- Visualizer -->
+  <div class="card">
+    <canvas id="visualizer"></canvas>
+  </div>
+
+  <div class="share-text">
+    ❤️ شارك الموقع واغتنم جبال من الحسنات ❤️
+  </div>
+
+  <button class="share-btn" onclick="shareSite()">
+    🔗 مشاركة الموقع
+  </button>
+
 </div>
 
 <script>
-const btn = document.getElementById("btn");
-const radio = document.getElementById("radio");
-const eq = document.getElementById("eq");
+  const audio = document.getElementById("audio");
+  const canvas = document.getElementById("visualizer");
+  const ctx = canvas.getContext("2d");
 
-const RADIO_URL = "https://n09.radiojar.com/8s5u5tpdtwzuv";
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
 
-btn.addEventListener("click", () => {
+  let audioContext, analyser, source, dataArray;
 
-  // لو مش شغال
-  if (radio.paused) {
-    radio.src = RADIO_URL;   // نحط الرابط وقت التشغيل
-    radio.play()
-      .then(() => {
-        btn.innerHTML = "❚❚";
-        eq.style.display = "flex";
-      })
-      .catch(err => {
-        alert("اضغط تشغيل مرة أخرى");
-        console.log(err);
-      });
+  audio.onplay = () => {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioContext.createAnalyser();
+      source = audioContext.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioContext.destination);
+      analyser.fftSize = 64;
+      dataArray = new Uint8Array(analyser.frequencyBinCount);
+    }
+    draw();
+  };
 
-  } else {
-    radio.pause();
-    btn.innerHTML = "▶";
-    eq.style.display = "none";
+  function draw() {
+    requestAnimationFrame(draw);
+    analyser.getByteFrequencyData(dataArray);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const barWidth = canvas.width / dataArray.length;
+    dataArray.forEach((value, i) => {
+      const barHeight = value / 2;
+      ctx.fillStyle = "#1e7f66";
+      ctx.fillRect(i * barWidth, canvas.height - barHeight, barWidth - 2, barHeight);
+    });
   }
-});
 
-// لو الصوت وقف لأي سبب
-radio.addEventListener("pause", () => {
-  btn.innerHTML = "▶";
-  eq.style.display = "none";
-});
+  function shareSite() {
+    if (navigator.share) {
+      navigator.share({
+        title: "إذاعة القرآن الكريم من القاهرة",
+        text: "استمع إلى إذاعة القرآن الكريم من القاهرة بث مباشر",
+        url: window.location.href
+      });
+    } else {
+      alert("المشاركة غير مدعومة على هذا المتصفح");
+    }
+  }
 </script>
 
 </body>
