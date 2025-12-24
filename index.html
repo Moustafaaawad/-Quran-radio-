@@ -2,7 +2,6 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>إذاعة القرآن الكريم – القاهرة</title>
@@ -22,61 +21,65 @@ body{
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  padding:20px;
 }
 
+/* العنوان */
 h1{
-  font-size:6vw;
-  margin-bottom:1vh;
+  font-size:7vw;
+  max-font-size:28px;
+  margin:0;
 }
 
-p{
+.subtitle{
   font-size:4vw;
+  max-font-size:16px;
   color:#666;
-  margin-bottom:5vh;
+  margin:10px 0 30px;
 }
 
 /* زر التشغيل */
-button{
-  width:40vw;
-  height:40vw;
-  max-width:200px;
-  max-height:200px;
+.play-btn{
+  width:120px;
+  height:120px;
   border-radius:50%;
   border:none;
   background:#1f8a70;
   color:#fff;
-  font-size:15vw;
+  font-size:50px;
   cursor:pointer;
 }
 
-button:active{
+.play-btn:active{
   background:#166a56;
 }
 
-/* شريط الصوت */
+/* شريط التفاعل */
 .equalizer{
   display:flex;
-  gap:6px;
-  margin-top:30px;
-  height:30px;
+  justify-content:center;
+  gap:8px;
+  margin-top:25px;
+  height:40px;
 }
 
 .bar{
-  width:6px;
-  height:100%;
+  width:8px;
+  height:10px;
   background:#1f8a70;
-  animation: bounce 1s infinite ease-in-out;
+  animation: wave 1s infinite ease-in-out;
   animation-play-state: paused;
 }
 
-.bar:nth-child(2){ animation-delay: .1s; }
-.bar:nth-child(3){ animation-delay: .2s; }
-.bar:nth-child(4){ animation-delay: .3s; }
-.bar:nth-child(5){ animation-delay: .4s; }
+.bar:nth-child(1){animation-delay:0s;}
+.bar:nth-child(2){animation-delay:.1s;}
+.bar:nth-child(3){animation-delay:.2s;}
+.bar:nth-child(4){animation-delay:.3s;}
+.bar:nth-child(5){animation-delay:.4s;}
 
-@keyframes bounce{
-  0%,100%{ height:20%; }
-  50%{ height:100%; }
+@keyframes wave{
+  0%,100%{ height:10px; }
+  50%{ height:40px; }
 }
 
 audio{
@@ -89,41 +92,10 @@ audio{
 
 <div class="wrapper">
   <h1>📻 إذاعة القرآن الكريم</h1>
-  <p>بث مباشر من القاهرة</p>
+  <div class="subtitle">بث مباشر من القاهرة</div>
 
-  <button id="btn" onclick="playPause()">▶</button>
+  <button class="play-btn" id="btn" onclick="togglePlay()">▶</button>
 
-  <!-- شريط التفاعل -->
-  <div class="equalizer" id="eq">
+  <div class="equalizer">
     <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-
-  <audio id="radio">
-    <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
-  </audio>
-</div>
-
-<script>
-const radio = document.getElementById("radio");
-const btn = document.getElementById("btn");
-const bars = document.querySelectorAll(".bar");
-
-function playPause(){
-  if(radio.paused){
-    radio.play();
-    btn.innerHTML = "❚❚";
-    bars.forEach(bar => bar.style.animationPlayState = "running");
-  }else{
-    radio.pause();
-    btn.innerHTML = "▶";
-    bars.forEach(bar => bar.style.animationPlayState = "paused");
-  }
-}
-</script>
-
-</body>
-</html>
+    <div cl
