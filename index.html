@@ -1,164 +1,192 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>إذاعة القرآن الكريم من القاهرة</title>
+<title>إذاعة القرآن الكريم من القاهرة</title>
 
-  <meta name="description" content="إذاعة القرآن الكريم من القاهرة بث مباشر على مدار الساعة">
-  <meta name="theme-color" content="#1e7f66">
+<meta name="description" content="إذاعة القرآن الكريم من القاهرة بث مباشر على مدار 24 ساعة">
+<meta name="theme-color" content="#1e7f66">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Tahoma", Arial;
-      background: linear-gradient(180deg, #3a2a1a, #1b1b1b);
-      color: #fff;
-      text-align: center;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Tahoma, Arial;
+  background: linear-gradient(180deg,#3a2a1a,#111);
+  color:#fff;
+  text-align:center;
+}
 
-    .container {
-      max-width: 420px;
-      margin: auto;
-      padding: 20px;
-    }
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:20px;
+}
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+h1{
+  font-size:26px;
+  margin-bottom:10px;
+}
 
-    .subtitle {
-      background: #f5e6c8;
-      color: #000;
-      padding: 10px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
+.subtitle{
+  background:#f5e6c8;
+  color:#000;
+  padding:10px;
+  border-radius:8px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 15px;
-      margin-bottom: 20px;
-      color: #000;
-    }
+.card{
+  background:#fff;
+  color:#000;
+  border-radius:16px;
+  padding:15px;
+  margin-bottom:20px;
+}
 
-    audio {
-      width: 100%;
-      height: 50px;
-    }
+.play{
+  width:100%;
+  padding:14px;
+  font-size:18px;
+  background:#1e7f66;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
 
-    canvas {
-      width: 100%;
-      height: 120px;
-    }
+canvas{
+  width:100%;
+  height:120px;
+}
 
-    .share-text {
-      color: #00ff99;
-      font-weight: bold;
-      margin: 15px 0;
-    }
+.share-text{
+  font-weight:bold;
+  margin:10px 0;
+}
 
-    .share-btn {
-      background: #25d366;
-      border: none;
-      color: #fff;
-      font-size: 18px;
-      padding: 12px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      width: 100%;
-    }
+.duaa{
+  color:#ffd27d;
+}
 
-    .share-btn:active {
-      transform: scale(0.97);
-    }
-  </style>
+.hasanat{
+  color:#00ff99;
+}
+
+.share-icons{
+  display:flex;
+  justify-content:space-around;
+  margin-top:10px;
+}
+
+.share-icons a{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:26px;
+  text-decoration:none;
+}
+
+.fb{background:#1877f2;}
+.ws{background:#25d366;}
+.ms{background:#0084ff;}
+</style>
 </head>
+
 <body>
 
 <div class="container">
 
-  <h1>📻 إذاعة القرآن الكريم</h1>
+<h1>📻 إذاعة القرآن الكريم</h1>
 
-  <div class="subtitle">
-    إذاعة القرآن الكريم من القاهرة بث مباشر
-  </div>
+<div class="subtitle">
+إذاعة القرآن الكريم من القاهرة بث مباشر
+</div>
 
-  <!-- Audio Player -->
-  <div class="card">
-    <audio id="audio" controls>
-      <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
-      المتصفح لا يدعم تشغيل الصوت
-    </audio>
-  </div>
+<!-- زر تشغيل الإذاعة -->
+<div class="card">
+<button class="play" onclick="startRadio()">▶ تشغيل الإذاعة</button>
 
-  <!-- Visualizer -->
-  <div class="card">
-    <canvas id="visualizer"></canvas>
-  </div>
+<audio id="audio" crossorigin="anonymous">
+  <!-- سورس الإذاعة (شغال) -->
+  <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
+  المتصفح لا يدعم تشغيل الصوت
+</audio>
+</div>
 
-  <div class="share-text">
-    ❤️ شارك الموقع واغتنم جبال من الحسنات ❤️
-  </div>
+<!-- الموجات -->
+<div class="card">
+<canvas id="visualizer"></canvas>
+</div>
 
-  <button class="share-btn" onclick="shareSite()">
-    🔗 مشاركة الموقع
-  </button>
+<!-- النصوص -->
+<div class="share-text duaa">
+🤲 نسألكم الدعاء 🤲
+</div>
+
+<div class="share-text hasanat">
+❤️ شارك الموقع واغتنم جبال من الحسنات ❤️
+</div>
+
+<!-- أيقونات الشير -->
+<div class="share-icons">
+  <a class="fb" target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=https://radioqurancairo.com">
+     f
+  </a>
+
+  <a class="ws" target="_blank"
+     href="https://wa.me/?text=إذاعة القرآن الكريم من القاهرة https://radioqurancairo.com">
+     🟢
+  </a>
+
+  <a class="ms" target="_blank"
+     href="https://www.facebook.com/dialog/send?link=https://radioqurancairo.com">
+     💬
+  </a>
+</div>
 
 </div>
 
 <script>
-  const audio = document.getElementById("audio");
-  const canvas = document.getElementById("visualizer");
-  const ctx = canvas.getContext("2d");
+let audioCtx, analyser, source, dataArray;
+const audio = document.getElementById("audio");
+const canvas = document.getElementById("visualizer");
+const ctx = canvas.getContext("2d");
 
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+function startRadio(){
+  audio.play();
 
-  let audioContext, analyser, source, dataArray;
-
-  audio.onplay = () => {
-    if (!audioContext) {
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      analyser = audioContext.createAnalyser();
-      source = audioContext.createMediaElementSource(audio);
-      source.connect(analyser);
-      analyser.connect(audioContext.destination);
-      analyser.fftSize = 64;
-      dataArray = new Uint8Array(analyser.frequencyBinCount);
-    }
+  if(!audioCtx){
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    analyser = audioCtx.createAnalyser();
+    source = audioCtx.createMediaElementSource(audio);
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
+    analyser.fftSize = 64;
+    dataArray = new Uint8Array(analyser.frequencyBinCount);
     draw();
-  };
-
-  function draw() {
-    requestAnimationFrame(draw);
-    analyser.getByteFrequencyData(dataArray);
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const barWidth = canvas.width / dataArray.length;
-    dataArray.forEach((value, i) => {
-      const barHeight = value / 2;
-      ctx.fillStyle = "#1e7f66";
-      ctx.fillRect(i * barWidth, canvas.height - barHeight, barWidth - 2, barHeight);
-    });
   }
+}
 
-  function shareSite() {
-    if (navigator.share) {
-      navigator.share({
-        title: "إذاعة القرآن الكريم من القاهرة",
-        text: "استمع إلى إذاعة القرآن الكريم من القاهرة بث مباشر",
-        url: window.location.href
-      });
-    } else {
-      alert("المشاركة غير مدعومة على هذا المتصفح");
-    }
-  }
+function draw(){
+  requestAnimationFrame(draw);
+  analyser.getByteFrequencyData(dataArray);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  const barWidth = canvas.width / dataArray.length;
+  dataArray.forEach((v,i)=>{
+    const h = v / 2;
+    ctx.fillStyle = "#1e7f66";
+    ctx.fillRect(i * barWidth, canvas.height - h, barWidth - 2, h);
+  });
+}
 </script>
 
 </body>
