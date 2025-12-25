@@ -1,169 +1,338 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>إذاعة القرآن الكريم | بث مباشر عالي الجودة</title>
+    <meta name="description" content="استمع للبث المباشر لإذاعة القرآن الكريم من القاهرة. تلاوات خاشعة على مدار 24 ساعة لأشهر القراء وبرامج دينية هادفة.">
+    <meta name="keywords" content="إذاعة القرآن الكريم, بث مباشر, راديو, القاهرة, الحصري, المنشاوي, قرآن أونلاين">
+    <meta name="theme-color" content="#1a5f7a">
 
-  <!-- ===== SEO ===== -->
-  <title>إذاعة القرآن الكريم من القاهرة | بث مباشر</title>
+    <meta property="og:title" content="إذاعة القرآن الكريم - بث مباشر">
+    <meta property="og:description" content="صدقة جارية - استمع الآن لأعذب التلاوات.">
+    <meta property="og:type" content="website">
 
-  <meta name="description" content="استمع الآن إلى إذاعة القرآن الكريم من القاهرة بث مباشر 24 ساعة. تلاوات خاشعة للقرآن الكريم بدون انقطاع.">
-  <meta name="keywords" content="إذاعة القرآن الكريم, إذاعة القرآن من القاهرة, بث مباشر القرآن, Quran Radio Cairo, Radio Quran">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://radioqurancairo.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* الألوان الجديدة: أزرق بحري (Teal) مع درجات هادئة */
+            --primary: #1a5f7a;       /* اللون الأساسي الغامق */
+            --secondary: #159895;     /* اللون الفرعي الفاتح */
+            --accent: #ff8c42;        /* لون التنبيهات (برتقالي هادئ) */
+            --bg-color: #f7f9fc;      /* خلفية الصفحة (رمادي مائل للأزرق خفيف جداً) */
+            --text-dark: #2c3e50;
+            
+            /* ألوان السوشيال ميديا */
+            --whatsapp: #25D366;
+            --facebook: #1877F2;
+            --telegram: #229ED9;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="إذاعة القرآن الكريم من القاهرة">
-  <meta property="og:description" content="بث مباشر لإذاعة القرآن الكريم – استمع وشارك الأجر">
-  <meta property="og:url" content="https://radioqurancairo.com/">
-  <meta property="og:image" content="https://radioqurancairo.com/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="إذاعة القرآن الكريم من القاهرة">
-  <meta name="twitter:description" content="بث مباشر للقرآن الكريم 24 ساعة">
-  <meta name="twitter:image" content="https://radioqurancairo.com/og-image.jpg">
+        /* الهيدر الجديد */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 20px rgba(26, 95, 122, 0.2);
+            margin-bottom: -40px; /* لدمج الهيدر مع الكروت */
+            padding-bottom: 60px;
+        }
+        header h1 { margin: 0; font-size: 24px; font-weight: 900; letter-spacing: 1px; }
 
-  <link rel="icon" href="og-image.jpg">
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
 
-  <!-- ===== STYLE ===== -->
-  <style>
-    body{
-      margin:0;
-      font-family: Tahoma, Arial;
-      background: linear-gradient(180deg,#2c1c0f,#000);
-      color:#fff;
-      text-align:center;
-    }
-    .container{
-      max-width:420px;
-      margin:auto;
-      padding:20px;
-    }
-    h1{
-      font-size:26px;
-      margin-bottom:10px;
-    }
-    .subtitle{
-      background:#f3e1c0;
-      color:#000;
-      padding:10px;
-      border-radius:8px;
-      font-weight:bold;
-      margin-bottom:20px;
-    }
-    .player{
-      background:#fff;
-      color:#000;
-      border-radius:16px;
-      padding:20px;
-      margin-bottom:20px;
-    }
-    .play-btn{
-      width:100%;
-      padding:14px;
-      font-size:18px;
-      background:#1fa36a;
-      color:#fff;
-      border:none;
-      border-radius:30px;
-      cursor:pointer;
-    }
-    .bars{
-      display:flex;
-      justify-content:center;
-      gap:5px;
-      margin-top:15px;
-      height:40px;
-    }
-    .bar{
-      width:6px;
-      background:#1fa36a;
-      animation:bounce 1s infinite ease-in-out;
-      animation-play-state:paused;
-    }
-    .bar:nth-child(2){animation-delay:.1s}
-    .bar:nth-child(3){animation-delay:.2s}
-    .bar:nth-child(4){animation-delay:.3s}
-    .bar:nth-child(5){animation-delay:.4s}
+        /* كارت المشغل */
+        .player-card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* ظل ناعم */
+            margin-bottom: 30px;
+        }
 
-    @keyframes bounce{
-      0%,100%{height:10px}
-      50%{height:40px}
-    }
+        .status-badge {
+            background-color: #e0f2f1;
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #b2dfdb;
+        }
 
-    .duaa{color:#00ff99;margin:15px 0}
-    .hasanat{color:#ff6666;margin-bottom:15px}
+        .pulse {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 0 0 rgba(255, 140, 66, 0.4);
+        }
 
-    .share a{
-      margin:8px;
-      color:#fff;
-      text-decoration:none;
-      font-size:16px;
-    }
-  </style>
+        /* زر التشغيل الكبير */
+        .play-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(21, 152, 149, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .play-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 20px 40px rgba(21, 152, 149, 0.5); }
+        .play-btn:active { transform: scale(0.95); }
+        
+        /* النص الذي طلبته (كبير وواضح) */
+        .click-text {
+            margin-top: 25px;
+            font-size: 22px; /* خط كبير جداً */
+            font-weight: 900; /* سميك جداً */
+            color: var(--primary);
+            display: block;
+        }
+        .click-subtext {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* منطقة المشاركة */
+        .share-area {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        .share-title {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .icon-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px; /* مربع بحواف دائرية بدلاً من دائرة كاملة */
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+        }
+        .icon-btn svg { width: 24px; height: 24px; fill: white; }
+        .icon-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+        .btn-wa { background: var(--whatsapp); box-shadow: 0 8px 15px rgba(37, 211, 102, 0.2); }
+        .btn-fb { background: var(--facebook); box-shadow: 0 8px 15px rgba(24, 119, 242, 0.2); }
+        .btn-tg { background: var(--telegram); box-shadow: 0 8px 15px rgba(34, 158, 217, 0.2); }
+        .btn-copy { background: #607d8b; box-shadow: 0 8px 15px rgba(96, 125, 139, 0.2); }
+
+        /* الدعاء */
+        .dua-box {
+            margin: 20px 0;
+            text-align: center;
+            background: linear-gradient(to right, #e0f7fa, #ffffff, #e0f7fa);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px dashed var(--secondary);
+        }
+        .dua-text {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* المحتوى */
+        .content-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+        .content-box h2 {
+            font-size: 20px;
+            color: var(--primary);
+            position: relative;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .content-box h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 5px;
+            border-radius: 2px;
+        }
+        .content-box p { font-size: 16px; color: #555; }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 140, 66, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 140, 66, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 140, 66, 0); }
+        }
+    </style>
 </head>
+<body itemscope itemtype="https://schema.org/RadioStation">
 
-<body>
+    <header>
+        <h1 itemprop="name">إذاعة القرآن الكريم</h1>
+        <div style="opacity: 0.8; font-size: 14px; margin-top: 5px;">من القاهرة - بث مباشر</div>
+    </header>
 
-<div class="container">
+    <div class="container">
+        
+        <div class="player-card">
+            <div class="status-badge">
+                <span class="pulse"></span>
+                <span id="statusText">مباشر الآن</span>
+            </div>
 
-  <h1>📻 إذاعة القرآن الكريم</h1>
+            <audio id="radio-stream" preload="none">
+                <source src="https://stream.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
+            </audio>
 
-  <div class="subtitle">
-    إذاعة القرآن الكريم من القاهرة – بث مباشر
-  </div>
+            <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="تشغيل">
+                <svg id="playIcon" width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="pauseIcon" width="45" height="45" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            
+            <span class="click-text">اضغط هنا للاستماع</span>
+            <div class="click-subtext">جودة عالية - بدون انقطاع</div>
+        </div>
 
-  <div class="player">
-    <button class="play-btn" id="playBtn" onclick="toggleRadio()">▶ تشغيل الإذاعة</button>
+        <div class="share-area">
+            <span class="share-title">شارك ولك الأجر إن شاء الله:</span>
+            
+            <div class="icons-container">
+                <button onclick="share('wa')" class="icon-btn btn-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></button>
+                <button onclick="share('fb')" class="icon-btn btn-fb"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.797 1.603-2.797 2.87v1.1h3.928l-.576 3.667h-3.352v7.98h-5.018z"/></svg></button>
+                <button onclick="share('tg')" class="icon-btn btn-tg"><svg viewBox="0 0 24 24" style="margin-left: -2px;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></button>
+                <button onclick="copyLink()" class="icon-btn btn-copy"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button>
+            </div>
+        </div>
 
-    <div class="bars" id="bars">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+        <div class="dua-box">
+            <div class="dua-text">🤲 نسألكم الدعاء بظهر الغيب 🤲</div>
+        </div>
+
+        <div class="content-box">
+            <h2>عن الإذاعة</h2>
+            <p>انطلقت إذاعة القرآن الكريم من القاهرة في 25 مارس 1964، لتكون أول إذاعة متخصصة في كتاب الله في العالم.</p>
+            <p>نقدم لكم باقة من التلاوات النادرة بصوت الشيخ محمود خليل الحصري، الشيخ عبد الباسط عبد الصمد، والشيخ المنشاوي.</p>
+        </div>
+
+        <footer>
+            جميع الحقوق محفوظة © 2024
+        </footer>
+
     </div>
 
-    <audio id="radio" preload="none">
-      <source src="https://n09.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
-    </audio>
-  </div>
+    <script>
+        const audio = document.getElementById("radio-stream");
+        const playBtn = document.getElementById("playBtn");
+        const playIcon = document.getElementById("playIcon");
+        const pauseIcon = document.getElementById("pauseIcon");
+        const statusText = document.getElementById("statusText");
+        
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play()
+                    .then(() => { updateUI(true); })
+                    .catch(error => { console.log(error); });
+            } else {
+                audio.pause();
+                updateUI(false);
+            }
+        }
 
-  <div class="duaa">🤲 نسألكم الدعاء 🤲</div>
-  <div class="hasanat">❤️ شارك الموقع واغتنم جبالًا من الحسنات ❤️</div>
+        function updateUI(isPlaying) {
+            if(isPlaying) {
+                playIcon.style.display = "none";
+                pauseIcon.style.display = "block";
+                statusText.innerText = "يتم البث الآن";
+                statusText.style.color = "#159895";
+                playBtn.style.transform = "scale(0.95)";
+                playBtn.style.boxShadow = "inset 0 0 15px rgba(0,0,0,0.2)";
+            } else {
+                playIcon.style.display = "block";
+                pauseIcon.style.display = "none";
+                statusText.innerText = "البث متوقف مؤقتاً";
+                statusText.style.color = "#e74c3c";
+                playBtn.style.transform = "scale(1)";
+                playBtn.style.boxShadow = "";
+            }
+        }
 
-  <div class="share">
-    <a href="https://wa.me/?text=https://radioqurancairo.com">🟢 واتساب</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://radioqurancairo.com">🔵 فيسبوك</a>
-    <a href="https://t.me/share/url?url=https://radioqurancairo.com">📢 تليجرام</a>
-  </div>
+        function share(platform) {
+            const url = window.location.href;
+            const text = "استمع الآن لإذاعة القرآن الكريم بث مباشر - جودة عالية: ";
+            let shareUrl = "";
+            if (platform === 'wa') shareUrl = `https://wa.me/?text=${encodeURIComponent(text + url)}`;
+            else if (platform === 'fb') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            else if (platform === 'tg') shareUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            window.open(shareUrl, '_blank');
+        }
 
-</div>
-
-<script>
-  const radio = document.getElementById("radio");
-  const btn = document.getElementById("playBtn");
-  const bars = document.querySelectorAll(".bar");
-  let playing = false;
-
-  function toggleRadio(){
-    if(!playing){
-      radio.play();
-      btn.innerText = "⏸ إيقاف الإذاعة";
-      bars.forEach(b => b.style.animationPlayState = "running");
-      playing = true;
-    }else{
-      radio.pause();
-      btn.innerText = "▶ تشغيل الإذاعة";
-      bars.forEach(b => b.style.animationPlayState = "paused");
-      playing = false;
-    }
-  }
-</script>
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert("تم نسخ الرابط بنجاح!");
+            });
+        }
+    </script>
 
 </body>
 </html>
