@@ -3,27 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إذاعة القرآن الكريم من القاهرة | بث مباشر 24 ساعة</title>
-    <meta name="description" content="استمع الآن للبث المباشر لإذاعة القرآن الكريم من القاهرة بجودة عالية وبدون تقطيع. تلاوات نادرة للحصري والمنشاوي وعبد الباسط.">
-    <meta name="keywords" content="إذاعة القرآن الكريم, بث مباشر, راديو القرآن, القاهرة, الحصري, المنشاوي, عبد الباسط, Quran Radio">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="فاعل خير">
-    <link rel="canonical" href="https://holyquranradio.com" />
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/512/3024/3024479.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3024/3024479.png">
 
-    <meta property="og:title" content="إذاعة القرآن الكريم من القاهرة - بث مباشر">
-    <meta property="og:description" content="صدقة جارية - استمع للقرآن الكريم بأصوات كبار القراء بجودة عالية. شارك ولك الأجر.">
-    <meta property="og:type" content="website">
+    <title>إذاعة القرآن الكريم من القاهرة | بث مباشر</title>
+    
+    <meta name="description" content="البث المباشر الرسمي لإذاعة القرآن الكريم من القاهرة. استمع الآن لتلاوات نادرة للحصري والمنشاوي وعبد الباسط بجودة عالية، وبرامج دينية على مدار الساعة.">
+    
+    <meta name="keywords" content="إذاعة القرآن الكريم, بث مباشر, راديو القاهرة, الحصري, المنشاوي, قرآن كريم, Live Quran Radio">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1a5f7a">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RadioStation",
-      "name": "إذاعة القرآن الكريم من القاهرة",
-      "url": "https://holyquranradio.com",
-      "description": "البث المباشر لإذاعة القرآن الكريم من القاهرة على مدار الساعة."
-    }
-    </script>
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/3024/3024479.png">
+    <meta property="og:title" content="إذاعة القرآن الكريم - بث مباشر">
+    <meta property="og:description" content="شارك ولك الأجر - استمع لأعذب التلاوات مباشرة من القاهرة.">
+    <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -48,6 +43,7 @@
             line-height: 1.5;
         }
 
+        /* الهيدر */
         header {
             background: var(--primary);
             color: white;
@@ -68,6 +64,7 @@
             z-index: 10;
         }
 
+        /* كارت المشغل */
         .player-card {
             background: white;
             padding: 20px;
@@ -94,12 +91,13 @@
         .listeners-count { display: flex; align-items: center; gap: 5px; color: var(--secondary); }
         .pulse { width: 8px; height: 8px; background-color: var(--accent); border-radius: 50%; animation: pulse 1.5s infinite; }
 
+        /* زر التشغيل */
         .play-btn {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border: none;
-            width: 85px;
-            height: 85px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 10px 20px rgba(21, 152, 149, 0.3);
@@ -110,7 +108,7 @@
             margin: 0 auto;
         }
         .play-btn:active { transform: scale(0.95); }
-        .play-btn svg { width: 35px; height: 35px; }
+        .play-btn svg { width: 40px; height: 40px; }
         
         .click-text {
             margin-top: 15px;
@@ -120,7 +118,7 @@
             display: block;
         }
 
-        /* تنسيق بوكس التفاعل */
+        /* منطقة التفاعل والمشاركة */
         .actions-wrapper {
             background: white;
             border-radius: 20px;
@@ -141,7 +139,6 @@
             margin-bottom: 15px;
         }
 
-        /* تنسيق الجملة الجديدة */
         .share-cta {
             font-size: 15px;
             font-weight: bold;
@@ -152,8 +149,8 @@
 
         .icons-container { display: flex; justify-content: center; gap: 10px; }
         .icon-btn {
-            width: 42px;
-            height: 42px;
+            width: 45px;
+            height: 45px;
             border-radius: 12px;
             border: none;
             display: flex;
@@ -164,13 +161,14 @@
             transition: transform 0.2s;
         }
         .icon-btn:active { transform: scale(0.9); }
-        .icon-btn svg { width: 20px; height: 20px; fill: white; }
+        .icon-btn svg { width: 22px; height: 22px; fill: white; }
 
         .btn-wa { background: var(--whatsapp); }
         .btn-fb { background: var(--facebook); }
         .btn-tg { background: var(--telegram); }
         .btn-copy { background: #607d8b; }
 
+        /* المحتوى النصي */
         .content-box {
             background: white;
             padding: 20px;
@@ -199,7 +197,7 @@
 
     <header role="banner">
         <h1 itemprop="name">إذاعة القرآن الكريم</h1>
-        <span class="subtitle" itemprop="areaServed">بث مباشر من القاهرة - 24 ساعة</span>
+        <span class="subtitle">بث مباشر من القاهرة - 24 ساعة</span>
     </header>
 
     <main class="container">
@@ -220,7 +218,7 @@
                 <source src="https://stream.radiojar.com/8s5u5tpdtwzuv" type="audio/mpeg">
             </audio>
 
-            <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="تشغيل إذاعة القرآن الكريم">
+            <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="تشغيل">
                 <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             </button>
@@ -231,24 +229,24 @@
         <div class="actions-wrapper">
             <div class="dua-box">🤲 نسألكم الدعاء بظهر الغيب 🤲</div>
             
-            <div class="share-cta">شارك ولك الأجر والثواب</div>
+            <span class="share-cta">شارك ولك الأجر والثواب</span>
 
             <div class="icons-container">
-                <button onclick="share('wa')" class="icon-btn btn-wa" aria-label="مشاركة عبر واتساب"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></button>
-                <button onclick="share('fb')" class="icon-btn btn-fb" aria-label="مشاركة عبر فيسبوك"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.797 1.603-2.797 2.87v1.1h3.928l-.576 3.667h-3.352v7.98h-5.018z"/></svg></button>
-                <button onclick="share('tg')" class="icon-btn btn-tg" aria-label="مشاركة عبر تليجرام"><svg viewBox="0 0 24 24" style="margin-left: -2px;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></button>
-                <button onclick="copyLink()" class="icon-btn btn-copy" aria-label="نسخ الرابط"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button>
+                <button onclick="share('wa')" class="icon-btn btn-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></button>
+                <button onclick="share('fb')" class="icon-btn btn-fb"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036c-2.148 0-2.797 1.603-2.797 2.87v1.1h3.928l-.576 3.667h-3.352v7.98h-5.018z"/></svg></button>
+                <button onclick="share('tg')" class="icon-btn btn-tg"><svg viewBox="0 0 24 24" style="margin-left: -2px;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></button>
+                <button onclick="copyLink()" class="icon-btn btn-copy"><svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg></button>
             </div>
         </div>
 
         <article class="content-box">
-            <h2>عن إذاعة القرآن الكريم من القاهرة</h2>
-            <p itemprop="description">انطلقت الإذاعة في 25 مارس 1964 كأول إذاعة متخصصة في كتاب الله. نقدم لكم عبر هذا الموقع البث المباشر (Live Stream) بأعلى جودة للاستماع إلى تلاوات نادرة للشيخ الحصري، الشيخ المنشاوي، الشيخ عبد الباسط، والشيخ مصطفى إسماعيل.</p>
+            <h2>عن الإذاعة</h2>
+            <p itemprop="description">انطلقت إذاعة القرآن الكريم من القاهرة في 25 مارس 1964. نستمع فيها لتلاوات نادرة للحصري والمنشاوي وعبد الباسط وبرامج الفتاوى والعلم والإيمان.</p>
         </article>
 
         <footer>
             جميع الحقوق محفوظة © 2025 <br>
-            <span style="font-size: 11px;">تم التطوير بنية الصدقة الجارية</span>
+            <span style="font-size: 11px;">صدقة جارية</span>
         </footer>
 
     </main>
@@ -260,17 +258,22 @@
         const pauseIcon = document.getElementById("pauseIcon");
         const statusText = document.getElementById("statusText");
         
+        // تشغيل وإيقاف الراديو
         function togglePlay() {
             if (audio.paused) {
                 audio.play()
                     .then(() => { updateUI(true); })
-                    .catch(error => { console.log(error); });
+                    .catch(error => { 
+                        console.log(error); 
+                        alert("اضغط مرة أخرى للتشغيل...");
+                    });
             } else {
                 audio.pause();
                 updateUI(false);
             }
         }
 
+        // تحديث الشكل عند التشغيل
         function updateUI(isPlaying) {
             if(isPlaying) {
                 playIcon.style.display = "none";
@@ -289,7 +292,7 @@
             }
         }
 
-        // عداد المستمعين
+        // عداد المستمعين (محاكاة)
         function updateListeners() {
             let base = 12500;
             let current = base + Math.floor(Math.random() * 200); 
@@ -298,6 +301,7 @@
         setInterval(updateListeners, 8000);
         updateListeners(); 
 
+        // المشاركة
         function share(platform) {
             const url = window.location.href;
             const text = "إذاعة القرآن الكريم - بث مباشر عالي الجودة: ";
